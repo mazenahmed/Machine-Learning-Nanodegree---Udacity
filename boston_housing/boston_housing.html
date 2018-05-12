@@ -12124,7 +12124,8 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> yes, because R^2 = 0.923 which means 92% of the true value are predictable form the predicion</p>
+<p><strong>Answer:</strong> yes, because R^2 = 0.923 which means 92% of the true value are predictable form the predicion.
+coefficient of determination, R^2 determines a squared correlation between the actual and the predicted values. the value of 0 means that the model would fail to predict the value, on the contrary the value of 1 means that the model would prefectly predict the value.</p>
 
 </div>
 </div>
@@ -12200,7 +12201,9 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Data splitting prevents overfitting which means perfom on the dataset better than new comming data.</p>
+<p><strong>Answer: </strong> splitting the data into training and testing is good way for validation.
+if all the dataset used as training set, overfitting will happen. and if all the dataset used as testing set, model would learn nothing.
+thus,we need to split the dataset into a proper ratio of training and testing, just enough data to fit the model, and enough data validation.</p>
 
 </div>
 </div>
@@ -12348,7 +12351,8 @@ yes, having more training points would benefit the model.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> when maximum depth = 1 suffers from high bias, when maximum depth = 10 suffers from high variance
+<p><strong>Answer: </strong> when maximum depth = 1 suffers from high bias(underfitting), training and validation scores are low, the model cannot generalize the data, and the two curves are convergence.
+when maximum depth = 10 suffers from high variance, a huge gap between training and validation scores, the training score is 1 which means a perfect fit but, the validation score is low at 0.7, thus the model is overfitting
 the model is divergence by increasing the depth and it's start at depth = 4.</p>
 
 </div>
@@ -12403,7 +12407,7 @@ the model is divergence by increasing the depth and it's start at depth = 4.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> it's working through combination of parameter, then cross validate each and determine which parameter is better at performance</p>
+<p><strong>Answer: </strong> Grid Search define a grid of hyperparameter then tries out every possible combination of the hyperparameters values to find the best model, it works to test systematically multiple possible parameters combinations for a model against a dataset.</p>
 
 </div>
 </div>
@@ -12428,8 +12432,13 @@ the model is divergence by increasing the depth and it's start at depth = 4.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> k-fold partitioning the data into equally sized k-bins then use one of bin as a test set and the left as training set. this process repeated for all partitions.
-using grid search with k-fold cv would make all of the data being used.</p>
+<p><strong>Answer: </strong> 1) splitting data into k-bins 
+2)pick a testing set and the remainder as a training .
+3) train the model.
+4) test on testing set.
+5)repeate from 2 to 4 k-times.
+then we can average the test results from those k experiments.</p>
+<p>using grid search with k-fold cv would make all of the data being used, if we run grid search without usinig k-fold cv, we will use less amount of training and testing set which will affect the accuracy.</p>
 
 </div>
 </div>
@@ -12750,6 +12759,7 @@ Range in prices: $69,044.61
 <p>-i think yes, but not in all cases. i think if we have 2 homes with the same features but one of them have a pool the model would predict the 2 homes with the same prices because it's lack of pool feature</p>
 <p>-no, it's different demographic and different level of living.</p>
 <p>-yes, what if there is too many nieghborhood that would reflect on transportaion and eduaction quality.</p>
+<p>-in the real-world we should not use this model, it suffer from lack of features and old data with old prices.</p>
 
 </div>
 </div>
