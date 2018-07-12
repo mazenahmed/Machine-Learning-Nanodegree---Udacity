@@ -12592,8 +12592,8 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>distance base learning isn't clear which type of distance to use to provide the best ressult.</li>
 <li>need to determine the value of K.</li>
 </ul>
-<p><strong> - why chosen this: </strong> Knn quite good in finding similars so, if i find a person who close to someone who donate thus, the person may donate too.</p>
-<p><br></p>
+<p><strong> - why chosen this: </strong> our data not too small nor too large, data is labeled,and features are equally likely.
+<br></p>
 <p><strong>*DECISION TREE:</strong></p>
 <p><strong> - real-world Application: </strong> self-driving car</p>
 <p><strong> - strengths: </strong></p>
@@ -12610,8 +12610,8 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>Doesn’t tend to work well with very small datasets</li>
 <li>Calculations can get very complex, particularly if many values are uncertain and/or if many outcomes are linked</li>
 </ul>
-<p><strong> - why chosen this: </strong> i think by organizing the data in a good way it would be good to predict who will donate because we have a clean dataset of binary features.</p>
-<p><br></p>
+<p><strong> - why chosen this: </strong> we can selecting the good features from the dataset then, divide it into good split(discussed in Question6),data is labeled and representative(it describes income in clear way greater/less than 50k).
+<br></p>
 <p><strong>*SVM:</strong></p>
 <p><strong> - real-world Application: </strong></p>
 <ul>
@@ -12632,7 +12632,7 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>Choosing a “good” kernel function is not easy.</li>
 <li>Difficult to understand and interpret the final model, variable weights and individual impact.</li>
 </ul>
-<p><strong> - why chosen this: </strong> it'd handle this problem well because the dataset has distinctly describe the income.</p>
+<p><strong> - why chosen this: </strong> works with multiple features well, data size is enough for training, data is labeled.</p>
 <p><br></p>
 <p><strong>*references:</strong></p>
 <ul>
@@ -12893,7 +12893,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 <p><strong>Answer: </strong>From the above, i Think the Decision Tree is the best Model for this Problem. 
 DT has the highest F-score compared to the other Models since the 100% of the training data is used, 
 and the Prediction/Training Time is very low which means it's very fast in both prediciont and Training.
-thus, DT is the most suitable model for the data.</p>
+thus, DT is the most suitable model for the data, aswell the dataset is clean and include binary labels.</p>
 
 </div>
 </div>
@@ -12919,6 +12919,16 @@ thus, DT is the most suitable model for the data.</p>
 it starts with a single decision(root) then it branches off into a number of a solutions.
 think about a simple tree which is called a binary tree because for each node it has two branches,
 we try to pick the best attribute which can split the data in half which means we need all the positive data seprated from negative data we can measure the impurity of a branch by using something called Entropy, the value of entropy is between 0 and 1, 0 means good and 1 means bad, because since entropy = 0 means this is the best branch.</p>
+<p>here is a visual example:
+<img src="Tree.gif"></p>
+<p>this example determine if you should respond to an e-mail or not based if the mail has important resources,
+The model will go through the whole dataset and calculate the loss function for all possible splits, to find the one that describes the data the best. when making a prediction the input data run through the constructed tree in trained model untill it ends at a leaf which make us know the result.</p>
+<p>references:</p>
+<ul>
+<li><a href="https://www.quora.com/Can-you-explain-a-decision-tree-in-simple-terms">https://www.quora.com/Can-you-explain-a-decision-tree-in-simple-terms</a></li>
+<li><a href="https://whatis.techtarget.com/definition/decision-tree">https://whatis.techtarget.com/definition/decision-tree</a></li>
+<li>udacity Review</li>
+</ul>
 
 </div>
 </div>
